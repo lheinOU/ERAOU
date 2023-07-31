@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+    <body style="margin:0px; overflow:hidden;">
+        <a-scene embedded arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+                 <a-marker type="pattern" url="pattern-frame.patt">
+                <a-gltf-model
+                position="0 0 0"
+                scale="1 1 1"
+                rotation="0 0 0" 
+                animation="property: object3D.rotation.y; to: 360; dur: 2000; loop: true"
+                src="/3dModels/KartARKart.gltf" >
+                </a-gltf-model>
+           
+                <a-entity
+                position="0 0 0"
+                scale="1 1 1"
+                gltf-model="/3dModels/KartARText.gltf">
+                </a-entity>
+           
+                </a-marker> 
+                <a-entity camera></a-entity>
+
+            </a-scene>
+    </body>
+</html>
